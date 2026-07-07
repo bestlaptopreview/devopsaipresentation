@@ -50,5 +50,5 @@ jobs:
         env:
           # Flaky mode is enabled in CI so teams have a realistic reliability issue to discuss.
           SIMULATE_FLAKY: "1"
-          # Increase failure probability so the flaky scenario is observable during short workshops.
-          SIMULATE_FLAKY_RATE: "0.45"
+          # Moderate failure probability keeps the flaky scenario observable without constant red builds.
+          SIMULATE_FLAKY_RATE: "0.3"

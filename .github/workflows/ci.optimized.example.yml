@@ -120,8 +120,8 @@ jobs:
         env:
           # Enable intermittent failures only in CI so the workshop can discuss flaky behaviour.
           SIMULATE_FLAKY: "1"
-          # Set a higher failure probability to make flaky behaviour easier to observe live.
-          SIMULATE_FLAKY_RATE: "0.45"
+          # Moderate failure probability keeps flaky behaviour observable without constant red builds.
+          SIMULATE_FLAKY_RATE: "0.3"
 
   # Guardrails example for Lab 4:
   # - Runs only on pull requests.

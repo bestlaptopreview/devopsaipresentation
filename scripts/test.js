@@ -32,15 +32,9 @@ function startMockService() {
 async function integrationTest() {
   const service = startMockService();
 
-  // Give the service a moment to come up before connecting.
-  await wait(100);
-
-  if (!service.ready) {
-    console.error(
-      "Integration test failed: connection refused - service on port 8080 was not ready after 100ms."
-    );
-    process.exit(1);
-  }
+  // Wait for actual readiness instead of a fixed sleep (fixes the flaky
+  // readiness race: startup jitter sometimes exceeded the 100ms guess).
+  await service.whenReady();
 
   console.log("Integration test complete (service ready)");
 }

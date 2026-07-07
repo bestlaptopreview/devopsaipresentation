@@ -27,6 +27,8 @@ jobs:
       # No dependency cache is configured here, so each run pays the full install cost.
       - name: Install dependencies
         run: npm ci
+      - name: Lint
+        run: npm run lint
       - name: Build
         run: npm run build
 

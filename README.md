@@ -5,6 +5,7 @@ This project is intentionally simple so participants can focus on pipeline impro
 ## Baseline Workflow
 - File: `.github/workflows/ci.yml`
 - Characteristics:
+  - Real npm dependencies (~90 MB installed) so install cost is measurable
   - Reinstalls dependencies in both jobs
   - No dependency cache
   - No test parallelisation

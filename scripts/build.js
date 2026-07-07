@@ -1,3 +1,5 @@
+const _ = require("lodash");
+
 const start = Date.now();
 
 function wait(ms) {
@@ -7,7 +9,7 @@ function wait(ms) {
 async function main() {
   console.log("Build started...");
   await wait(1200);
-  console.log("Compiling modules...");
+  console.log(`Compiling ${_.range(1, 4).length} module groups...`);
   await wait(1200);
   console.log("Packaging artifacts...");
   await wait(1200);

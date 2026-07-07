@@ -1,9 +1,12 @@
 name: ci-lab-optimized-example
 
+# Manual and PR-only triggers: this example must not run on every push,
+# or it pollutes Lab 1 baseline measurements and doubles CI cost.
 on:
+  workflow_dispatch:
   pull_request:
-  push:
-    branches: [main]
+    paths:
+      - '.github/workflows/ci.optimized.example.yml'
 
 # Limit token scope so the workflow only gets the minimum repository access it needs.
 permissions:
